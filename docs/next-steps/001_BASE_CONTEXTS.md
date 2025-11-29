@@ -110,9 +110,9 @@ The `Jobs` context manages job listings.
 - [X] **Generate Companies Context:** `mix phx.gen.context Companies Company companies ...`
 - [X] **Generate Profiles Context:** `mix phx.gen.context Profiles Profile profiles ...`
 - [X] **Generate Jobs Context:** `mix phx.gen.context Jobs JobPosting job_postings ...`
-- [ ] **Review Migrations:** Ensure strict constraints (non-nulls, indexes).
-- [ ] **Run Migrations:** `mix ecto.migrate`.
-- [ ] **Verify Schemas:** Check `belongs_to` / `has_many` relationships in `.ex` files.
-- [ ] **Commit:** "feat: Implement base domain contexts"
+- [X] **Review Migrations:** Ensure strict constraints (non-nulls, indexes).
+- [X] **Run Migrations:** `mix ecto.migrate`.
+- [X] **Verify Schemas:** Check `belongs_to` / `has_many` relationships in `.ex` files.
+- [X] **Commit:** "feat: Implement base domain contexts"
 
 ---
