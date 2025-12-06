@@ -10,6 +10,10 @@ defmodule Ponos.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
+      dialyzer: [
+        plt_add_apps: [:ex_unit],
+        check_plt: true
+      ],
       compilers: [:phoenix_live_view] ++ Mix.compilers(),
       listeners: [Phoenix.CodeReloader]
     ]
@@ -62,7 +66,8 @@ defmodule Ponos.MixProject do
       {:gettext, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.2.0"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
   end
 
@@ -85,7 +90,8 @@ defmodule Ponos.MixProject do
         "esbuild ponos --minify",
         "phx.digest"
       ],
-      precommit: ["compile --warnings-as-errors", "deps.unlock --unused", "format", "test"]
+      typecheck: ["dialyzer"],
+      precommit: ["compile --warnings-as-errors", "deps.unlock --unused", "format", "test", "dialyzer"]
     ]
   end
 end

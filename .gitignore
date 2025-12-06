@@ -35,3 +35,19 @@ ponos-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Elixir
+*.beam
+/config/*.secret.exs
+.elixir_ls/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+*~
+*.swp
+
+# Agent Context Files
+AGENTS.*
+CLAUDE.*
+GEMINI.*
